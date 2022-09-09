@@ -1,0 +1,10 @@
+ID,Hostname,Location,Domain,ADDomain,PEM
+0,bryan-srv-core,[Progmasters U] -> (RG-user06),bryan-srv-core.westeurope.cloudapp.azure.com,,
+1,bryan-srv01,[Progmasters U] -> (RG-user06),bryan-srv01.westeurope.cloudapp.azure.com,bryan.local,
+2,bryan-srv02,[Progmasters U] -> (RG-user06),bryan-srv02.westeurope.cloudapp.azure.com,bryan.local,
+3,bdc01,[Bryan U] -> (bryan),bdc01.westeurope.cloudapp.azure.com,,
+4,bdc02,[Bryan U] -> (bryan),bdc02.westeurope.cloudapp.azure.com,,
+5,bsrv01,[Bryan U] -> (bryan),bsrv01.westeurope.cloudapp.azure.com,,
+6,bsrv02,[Bryan U] -> (bryan),bsrv02.westeurope.cloudapp.azure.com,,
+7,mssql-ubuntu,[Progmasters U] -> (RG-user06),bryan-mssql.westeurope.cloudapp.azure.com,,bryan-pm.pem
+8,bryan-w11,[Progmasters U] -> (RG-user06),bryan-w11.westeurope.cloudapp.azure.com,bryan.local,
