@@ -3,6 +3,8 @@
 #Changelog 
 
 
+2022.09.09 - Adding simple C# MSSQL database management app ManageDB v.0.1 (Datasource editor for Connect-To-AzureVm-SQL Module)
+
 2022.09.07 - Adding MS SQL database support, with example database + db_credential_maker
 
 2022.09.06 - Adding SSH support,Active Directory Domain support and implementing better credential logic
