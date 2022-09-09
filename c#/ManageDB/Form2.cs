@@ -18,7 +18,7 @@ namespace ManageDB
    
     public partial class Form2 : Form
     {
-         static class Vmdata
+    static class Vmdata
     {
         public static string connectionString;
         public static string hostname;
@@ -35,12 +35,6 @@ namespace ManageDB
         public static int ADdomain_id;
         public static int Pem_id;
 
-
-
-            public static string test()
-        {
-            return "test";
-        }
     }
 
         public Form2()
@@ -140,30 +134,18 @@ namespace ManageDB
             Vmdata.resource = resource_box.Text;
         }
 
-    
-
-
-        public void button1_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
           
-
             Vmdata.hostname = tb_hostname.Text;
             Vmdata.location = location_combo.Text;
             Vmdata.resource = resource_box.Text;
             Vmdata.domain = tb_domain.Text;
             Vmdata.ADdomain = addomain_box.Text;
             Vmdata.Pem = pem_box.Text;
-
-
-            /*SQL Query*/
-
             
-
             SqlConnection con = new SqlConnection(Vmdata.connectionString);
             con.Open();
-
-            /* query location */
-
 
 
             string selectquery = "select id FROM vm_locations WHERE vm_locations.location =  @location";
@@ -175,36 +157,25 @@ namespace ManageDB
             string query_pem = "select id FROM vm_pems WHERE pem =  @pem";
 
 
-
             SqlCommand cmd = new SqlCommand(selectquery, con);
-         
-
-
             cmd.Parameters.Add("@location", SqlDbType.VarChar);
             cmd.Parameters["@location"].Value = Vmdata.location;
 
 
             SqlCommand cmd2 = new SqlCommand(query_resources, con);
-
-
             cmd2.Parameters.Add("@resources", SqlDbType.VarChar);
             cmd2.Parameters["@resources"].Value = Vmdata.resource;
 
 
             SqlCommand cmd3 = new SqlCommand(query_addomain, con);
-
             cmd3.Parameters.Add("@addomain", SqlDbType.VarChar);
             cmd3.Parameters["@addomain"].Value = Vmdata.ADdomain;
 
             SqlCommand cmd4 = new SqlCommand(query_pem, con);
-
             cmd4.Parameters.Add("@pem", SqlDbType.VarChar);
             cmd4.Parameters["@pem"].Value = Vmdata.Pem;
 
            
-
-
-
             SqlDataReader reader = cmd.ExecuteReader();
 
      
@@ -214,8 +185,6 @@ namespace ManageDB
             }
 
             reader.Close();
-
-
 
             SqlDataReader reader2 = cmd2.ExecuteReader();
 
@@ -245,12 +214,12 @@ namespace ManageDB
             reader4.Close();
 
 
-            Console.WriteLine(Vmdata.hostname.GetType());
-            Console.WriteLine(Vmdata.hostname.Length);
+            //Console.WriteLine(Vmdata.hostname.GetType());
+            //Console.WriteLine(Vmdata.hostname.Length);
 
-            if ((Vmdata.hostname.Length) > 2) {
+            if (Vmdata.hostname_id == 0) {
 
-                Console.WriteLine("Új hostnév");
+                //Console.WriteLine("Új hostnév");
 
                 SqlCommand cmd_vm = new SqlCommand("Insert_vm_hostnames", con);
 
@@ -274,9 +243,9 @@ namespace ManageDB
 
             }
 
-            if ((Vmdata.location.Length) > 2)
+            if (Vmdata.location_id == 0)
             {
-                Console.WriteLine("Új location");
+                //Console.WriteLine("Új location");
                 
                 SqlCommand cmd_vm_loc = new SqlCommand("Insert_vm_locations", con);
 
@@ -295,16 +264,16 @@ namespace ManageDB
                 da.SelectCommand.Connection = conn;
 
                 Vmdata.location_id =  Convert.ToInt32(da.SelectCommand.ExecuteScalar());
-                Console.WriteLine(Vmdata.location_id);
+                //Console.WriteLine(Vmdata.location_id);
 
 
             }
 
 
 
-            if ((Vmdata.resource.Length) > 2)
+            if (Vmdata.resource_id == 0)
             {
-                Console.WriteLine("Új resource");
+                //Console.WriteLine("Új resource");
                 Console.WriteLine(Vmdata.resource);
 
                 SqlCommand cmd_vm_res = new SqlCommand("[Insert_vm_resources]", con);
@@ -324,15 +293,15 @@ namespace ManageDB
                 da.SelectCommand.Connection = conn;
 
                 Vmdata.resource_id = Convert.ToInt32(da.SelectCommand.ExecuteScalar());
-                Console.WriteLine(Vmdata.resource_id);
+                //Console.WriteLine(Vmdata.resource_id);
 
 
             }
 
-            if ((Vmdata.domain.Length) > 2)
+            if (Vmdata.domain_id == 0)
             {
-                Console.WriteLine("Új domain");
-                Console.WriteLine(Vmdata.domain);
+                //Console.WriteLine("Új domain");
+                //Console.WriteLine(Vmdata.domain);
 
                 SqlCommand cmd_vm_dom = new SqlCommand("[Insert_vm_domains]", con);
 
@@ -351,15 +320,15 @@ namespace ManageDB
                 da.SelectCommand.Connection = conn;
 
                 Vmdata.domain_id = Convert.ToInt32(da.SelectCommand.ExecuteScalar());
-                Console.WriteLine(Vmdata.domain_id);
+                //Console.WriteLine(Vmdata.domain_id);
 
 
             }
 
-            if ((Vmdata.ADdomain.Length) > 2)
+            if (Vmdata.ADdomain_id == 0)
             {
-                Console.WriteLine("Új addomain");
-                Console.WriteLine(Vmdata.ADdomain);
+                //Console.WriteLine("Új addomain");
+                //Console.WriteLine(Vmdata.ADdomain);
 
                 SqlCommand cmd_vm_addomain = new SqlCommand("[Insert_vm_addomains]", con);
 
@@ -378,15 +347,14 @@ namespace ManageDB
                 da.SelectCommand.Connection = conn;
 
                 Vmdata.ADdomain_id = Convert.ToInt32(da.SelectCommand.ExecuteScalar());
-                Console.WriteLine(Vmdata.ADdomain_id);
+                //Console.WriteLine(Vmdata.ADdomain_id);
 
 
             }
 
-            if ((Vmdata.Pem.Length) > 2)
+            if (Vmdata.Pem_id == 0)
             {
-                Console.WriteLine("Új pem");
-                Console.WriteLine(Vmdata.Pem);
+                //Console.WriteLine("Új pem");
 
                 SqlCommand cmd_vm_pem = new SqlCommand("[Insert_vm_pem]", con);
 
@@ -406,10 +374,10 @@ namespace ManageDB
 
                 Vmdata.Pem_id = Convert.ToInt32(da.SelectCommand.ExecuteScalar());
                 Console.WriteLine(Vmdata.Pem_id);
-
+              
+              
 
             }
-
 
             /*Write to SQL based on stored procedure */
 
@@ -430,46 +398,35 @@ namespace ManageDB
 
             
             MessageBox.Show("Data saved successfully ...");
-            Form2 frm2 = new Form2();
-            frm2.Hide();
+         
+          
             this.Close();
             this.Controls.Clear();
             InitializeComponent();
-            
-
-
 
         }
         public static void ReadLocation(IDataRecord dataRecord)
         {
             Console.WriteLine(dataRecord[0]);
             Vmdata.location_id  =Convert.ToInt32(dataRecord[0]);
-            
-
         }
 
         public static void ReadResource(IDataRecord dataRecord)
         {
             Console.WriteLine(dataRecord[0]);
             Vmdata.resource_id = Convert.ToInt32(dataRecord[0]);
-
-
         }
 
         public static void ReadAddomain(IDataRecord dataRecord)
         {
             Console.WriteLine(dataRecord[0]);
             Vmdata.ADdomain_id = Convert.ToInt32(dataRecord[0]);
-
-
         }
 
         public static void ReadPem(IDataRecord dataRecord)
         {
-            Console.WriteLine(dataRecord[0]);
+            Console.WriteLine(dataRecord[0]); 
             Vmdata.Pem_id = Convert.ToInt32(dataRecord[0]);
-
-
         }
 
         private void resource_box_SelectedIndexChanged(object sender, EventArgs e)

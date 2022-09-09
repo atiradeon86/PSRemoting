@@ -22,3 +22,6 @@ E:\GitHub\PSRemoting\c#\ManageDB\obj\Debug\ManageDB.csproj.GenerateResource.cach
 E:\GitHub\PSRemoting\c#\ManageDB\obj\Debug\ManageDB.csproj.CoreCompileInputs.cache
 E:\GitHub\PSRemoting\c#\ManageDB\obj\Debug\ManageDB.exe
 E:\GitHub\PSRemoting\c#\ManageDB\obj\Debug\ManageDB.pdb
+E:\GitHub\PSRemoting\c#\ManageDB\obj\Debug\ManageDB.Form3.resources
+E:\GitHub\PSRemoting\c#\ManageDB\obj\Debug\ManageDB.Form4.resources
+E:\GitHub\PSRemoting\c#\ManageDB\obj\Debug\ManageDB.Form5.resources

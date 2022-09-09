@@ -38,7 +38,7 @@ namespace ManageDB {
         
         private vm_resourcesDataTable tablevm_resources;
         
-        private GetAllDataDataTable tableGetAllData;
+        public GetAllDataDataTable tableGetAllData;
         
         private GetHostnamesDataTable tableGetHostnames;
         

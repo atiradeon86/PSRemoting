@@ -84,6 +84,7 @@
             this.getLocationsBindingSource9 = new System.Windows.Forms.BindingSource(this.components);
             this.getADDomainsTableAdapter = new ManageDB.vmDataSetTableAdapters.GetADDomainsTableAdapter();
             this.getPEMSTableAdapter = new ManageDB.vmDataSetTableAdapters.GetPEMSTableAdapter();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             ((System.ComponentModel.ISupportInitialize)(this.getLocationsBindingSource4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vmlocationsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vmlocationsBindingSource1)).BeginInit();
@@ -143,7 +144,8 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(45, 625);
+            this.label6.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.label6.Location = new System.Drawing.Point(305, 437);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(71, 20);
             this.label6.TabIndex = 6;
@@ -152,7 +154,8 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(45, 506);
+            this.label5.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.label5.Location = new System.Drawing.Point(305, 344);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(87, 20);
             this.label5.TabIndex = 5;
@@ -161,16 +164,18 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(45, 392);
+            this.label4.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.label4.Location = new System.Drawing.Point(116, 45);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(64, 20);
+            this.label4.Size = new System.Drawing.Size(112, 20);
             this.label4.TabIndex = 4;
-            this.label4.Text = "Domain";
+            this.label4.Text = "Domain name:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(43, 256);
+            this.label3.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.label3.Location = new System.Drawing.Point(305, 256);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(127, 20);
             this.label3.TabIndex = 3;
@@ -179,7 +184,8 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(45, 129);
+            this.label2.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.label2.Location = new System.Drawing.Point(305, 155);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(70, 20);
             this.label2.TabIndex = 2;
@@ -189,7 +195,8 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(43, 22);
+            this.label1.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.label1.Location = new System.Drawing.Point(599, 45);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(83, 20);
             this.label1.TabIndex = 1;
@@ -197,7 +204,7 @@
             // 
             // tb_hostname
             // 
-            this.tb_hostname.Location = new System.Drawing.Point(47, 65);
+            this.tb_hostname.Location = new System.Drawing.Point(706, 39);
             this.tb_hostname.Name = "tb_hostname";
             this.tb_hostname.Size = new System.Drawing.Size(292, 26);
             this.tb_hostname.TabIndex = 0;
@@ -211,7 +218,7 @@
             this.resource_box.DataSource = this.getResourcesBindingSource9;
             this.resource_box.DisplayMember = "resource";
             this.resource_box.FormattingEnabled = true;
-            this.resource_box.Location = new System.Drawing.Point(49, 309);
+            this.resource_box.Location = new System.Drawing.Point(438, 253);
             this.resource_box.Name = "resource_box";
             this.resource_box.Size = new System.Drawing.Size(294, 28);
             this.resource_box.TabIndex = 15;
@@ -232,7 +239,7 @@
             this.location_combo.DataSource = this.getLocationsBindingSource10;
             this.location_combo.DisplayMember = "location";
             this.location_combo.FormattingEnabled = true;
-            this.location_combo.Location = new System.Drawing.Point(47, 174);
+            this.location_combo.Location = new System.Drawing.Point(438, 147);
             this.location_combo.Name = "location_combo";
             this.location_combo.Size = new System.Drawing.Size(290, 28);
             this.location_combo.TabIndex = 16;
@@ -250,17 +257,20 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(696, 309);
+            this.button1.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button1.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.button1.Location = new System.Drawing.Point(511, 534);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(151, 53);
             this.button1.TabIndex = 17;
             this.button1.Text = "Create";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // tb_domain
             // 
-            this.tb_domain.Location = new System.Drawing.Point(49, 442);
+            this.tb_domain.Location = new System.Drawing.Point(249, 39);
             this.tb_domain.Name = "tb_domain";
             this.tb_domain.Size = new System.Drawing.Size(292, 26);
             this.tb_domain.TabIndex = 18;
@@ -270,7 +280,7 @@
             this.addomain_box.DataSource = this.getADDomainsBindingSource;
             this.addomain_box.DisplayMember = "addomain";
             this.addomain_box.FormattingEnabled = true;
-            this.addomain_box.Location = new System.Drawing.Point(49, 561);
+            this.addomain_box.Location = new System.Drawing.Point(440, 336);
             this.addomain_box.Name = "addomain_box";
             this.addomain_box.Size = new System.Drawing.Size(292, 28);
             this.addomain_box.TabIndex = 19;
@@ -286,7 +296,7 @@
             this.pem_box.DataSource = this.getPEMSBindingSource;
             this.pem_box.DisplayMember = "pem";
             this.pem_box.FormattingEnabled = true;
-            this.pem_box.Location = new System.Drawing.Point(49, 670);
+            this.pem_box.Location = new System.Drawing.Point(440, 429);
             this.pem_box.Name = "pem_box";
             this.pem_box.Size = new System.Drawing.Size(292, 28);
             this.pem_box.TabIndex = 20;
@@ -433,11 +443,22 @@
             // 
             this.getPEMSTableAdapter.ClearBeforeFill = true;
             // 
+            // statusStrip1
+            // 
+            this.statusStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 634);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(1154, 22);
+            this.statusStrip1.TabIndex = 21;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1154, 728);
+            this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.ClientSize = new System.Drawing.Size(1154, 656);
+            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.pem_box);
             this.Controls.Add(this.addomain_box);
             this.Controls.Add(this.tb_domain);
@@ -550,5 +571,6 @@
         private System.Windows.Forms.ComboBox pem_box;
         private System.Windows.Forms.BindingSource getPEMSBindingSource;
         private vmDataSetTableAdapters.GetPEMSTableAdapter getPEMSTableAdapter;
+        private System.Windows.Forms.StatusStrip statusStrip1;
     }
 }
